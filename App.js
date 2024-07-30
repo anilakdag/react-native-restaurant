@@ -3,14 +3,20 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import SearchScreen from "./screens/SearchScreen";
+import ResultsShowScreen from "./screens/ResultsShowScreen";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer >
-      <Stack.Navigator>
-        <Stack.Screen  name="SearchScreen" component={SearchScreen} />
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          title: "Business Search",
+        }}
+      >
+        <Stack.Screen name="SearchScreen" component={SearchScreen} />
+        <Stack.Screen name="ResultsShowScreen" component={ResultsShowScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
